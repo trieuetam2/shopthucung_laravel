@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>create</h1>
+    <h1>edit</h1>
 
     <div class="err">
         @if($errors->any())
@@ -19,30 +19,27 @@
     </div>
 
 
-    <form method="POST" action="{{ route('product.store') }}">
+    <form method="POST" action="{{route('product.update', ['product' => $product])}}">
         @csrf
+        @method('put')
         <div>
-            <label for="">Name: </label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{$product->name}}">
         </div>
 
         <div>
-            <label for="">Qty: </label>
-            <input type="text" name="qty">
+            <input type="text" name="qty" value="{{$product->qty}}">
         </div>
 
         <div>
-            <label for="">price: </label>
-            <input type="number" name="price">
+            <input type="number" name="price" value="{{$product->price}}">
         </div>
 
         <div>
-            <label for="">Mo ta: </label>
-            <input type="text" name="mota">
+            <input type="text" name="mota" value="{{$product->mota}}">
         </div>
 
         <div>
-            <input type="submit" value="send">
+            <input type="submit" value="Update">
         </div>
     </form>
 </body>
