@@ -5,21 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+use App\Repositories\IProductRepository;
+
 class ProductController extends Controller
 {
+
+    private $productRepository;
+
+    public function __construct(IProductRepository $productRepository) {
+        $this->productRepository = $productRepository;
+    }
+
     public function index(){
-        $products = Product::all();
+        $products = $this->productRepository->allProduct();
+
         return view('products.index', ['products' => $products]);
     }
+
     public function create(){
         return view('products.create');
     }
 
-
     public function store(Request $request){
-        $data = $request->all(); // Retrieve all form input data
 
-        // Validation can be uncommented after testing the form
         $validatedData = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
@@ -27,18 +35,17 @@ class ProductController extends Controller
             'mota' => 'required'
         ]);
 
-        // Create and save the product
-        $saveProduct = Product::create($data);
+        $this->productRepository->storeProduct($validatedData);
 
-        // Redirect to the product index page
         return redirect()->route('product.index');
     }
 
-    public function edit(Product $product){
+    public function edit($id){
+        $product = $this->productRepository->findProduct($id);
         return view('products.edit', ['product' => $product]);
     }
 
-    public function update(Product $product, Request $request){
+    public function update($id, Request $request){
         $validatedData = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
@@ -46,13 +53,14 @@ class ProductController extends Controller
             'mota' => 'required'
         ]);
 
-        $product->update($validatedData);
+        $this->productRepository->updateProduct($validatedData, $id);
 
         return redirect()->route('product.index')->with('success', 'update thanh cong');
     }
 
-    public function destroy(Product $product){
-        $product->delete();
+    public function destroy($id){
+        $this->productRepository->deleteProduct($id);
+
         return redirect()->route('product.index')->with('success', 'xoa thanh cong');
     }
 

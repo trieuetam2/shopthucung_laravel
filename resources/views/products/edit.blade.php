@@ -19,7 +19,7 @@
     </div>
 
 
-    <form method="POST" action="{{route('product.update', ['product' => $product])}}">
+    <form method="POST" action="{{ route('product.update', ['product' => $product->id]) }}">
         @csrf
         @method('put')
         <div>
