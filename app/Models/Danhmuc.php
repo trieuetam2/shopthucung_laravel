@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $id_danhmuc
  * @property int    $id_danhmuc
  * @property int    $id_danhmuc
+ * @property int    $id_danhmuc
+ * @property string $ten_danhmuc
  * @property string $ten_danhmuc
  * @property string $ten_danhmuc
  * @property string $ten_danhmuc
@@ -34,7 +36,7 @@ class Danhmuc extends Model
      * @var array
      */
     protected $fillable = [
-        'ten_danhmuc', 'ten_danhmuc', 'ten_danhmuc'
+        'ten_danhmuc', 'ten_danhmuc', 'ten_danhmuc', 'ten_danhmuc'
     ];
 
     /**
@@ -52,7 +54,7 @@ class Danhmuc extends Model
      * @var array
      */
     protected $casts = [
-        'id_danhmuc' => 'int', 'id_danhmuc' => 'int', 'id_danhmuc' => 'int', 'ten_danhmuc' => 'string', 'ten_danhmuc' => 'string', 'ten_danhmuc' => 'string'
+        'id_danhmuc' => 'int', 'id_danhmuc' => 'int', 'id_danhmuc' => 'int', 'id_danhmuc' => 'int', 'ten_danhmuc' => 'string', 'ten_danhmuc' => 'string', 'ten_danhmuc' => 'string', 'ten_danhmuc' => 'string'
     ];
 
     /**

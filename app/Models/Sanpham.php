@@ -8,12 +8,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $id_sanpham
  * @property int    $id_sanpham
  * @property int    $id_sanpham
+ * @property int    $id_sanpham
  * @property int    $giasp
  * @property int    $id_danhmuc
  * @property int    $giasp
  * @property int    $id_danhmuc
  * @property int    $giasp
  * @property int    $id_danhmuc
+ * @property int    $giasp
+ * @property int    $id_danhmuc
+ * @property string $tensp
+ * @property string $anhsp
+ * @property string $mota
  * @property string $tensp
  * @property string $anhsp
  * @property string $mota
@@ -46,7 +52,7 @@ class Sanpham extends Model
      * @var array
      */
     protected $fillable = [
-        'tensp', 'anhsp', 'giasp', 'mota', 'discount', 'id_danhmuc', 'tensp', 'anhsp', 'giasp', 'mota', 'id_danhmuc', 'tensp', 'anhsp', 'giasp', 'mota', 'discount', 'id_danhmuc'
+        'tensp', 'anhsp', 'giasp', 'mota', 'giamgia', 'id_danhmuc', 'tensp', 'anhsp', 'giasp', 'mota', 'id_danhmuc', 'tensp', 'anhsp', 'giasp', 'mota', 'discount', 'id_danhmuc', 'tensp', 'anhsp', 'giasp', 'mota', 'giamgia', 'id_danhmuc'
     ];
 
     /**
@@ -64,7 +70,7 @@ class Sanpham extends Model
      * @var array
      */
     protected $casts = [
-        'id_sanpham' => 'int', 'id_sanpham' => 'int', 'id_sanpham' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int'
+        'id_sanpham' => 'int', 'id_sanpham' => 'int', 'id_sanpham' => 'int', 'id_sanpham' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int', 'tensp' => 'string', 'anhsp' => 'string', 'giasp' => 'int', 'mota' => 'string', 'id_danhmuc' => 'int'
     ];
 
     /**

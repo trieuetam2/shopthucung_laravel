@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DanhmucController;
 /*
@@ -14,10 +16,25 @@ use App\Http\Controllers\DanhmucController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Frontend
+Route::get('/', [HomeController:: class, 'index']);
+Route::get('/admin', [AdminController:: class, 'index']);
+Route::get('/dashboard', [AdminController:: class, 'dashboard']);
 
+
+
+
+
+
+
+//Backend
+
+
+
+
+
+
+//khac
 Route::get('/product', [ProductController:: class, 'index'])->name('product.index');
 Route::get('/product/create', [ProductController:: class, 'create'])->name('product.create');
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');

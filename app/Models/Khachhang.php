@@ -5,24 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property int    $id_kh
+ * @property int    $id_kh
+ * @property int    $id_kh
+ * @property int    $id_kh
+ * @property int    $sdt
+ * @property int    $id_phanquyen
+ * @property int    $sdt
+ * @property int    $sdt
+ * @property int    $sdt
+ * @property int    $id_phanquyen
  * @property string $makh
  * @property string $makh
- * @property string $makh
+ * @property string $hoten
+ * @property string $email
+ * @property string $matkhau
+ * @property string $diachi
  * @property string $tenkh
  * @property string $diachi
  * @property string $email
  * @property string $tenkh
  * @property string $diachi
  * @property string $email
- * @property string $tenkh
- * @property string $diachi
+ * @property string $hoten
  * @property string $email
- * @property int    $id_kh
- * @property int    $id_kh
- * @property int    $id_kh
- * @property int    $sdt
- * @property int    $sdt
- * @property int    $sdt
+ * @property string $matkhau
+ * @property string $diachi
  */
 class Khachhang extends Model
 {
@@ -38,7 +46,7 @@ class Khachhang extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'makh';
+    protected $primaryKey = 'id_kh';
 
     /**
      * Attributes that should be mass-assignable.
@@ -46,7 +54,7 @@ class Khachhang extends Model
      * @var array
      */
     protected $fillable = [
-        'id_kh', 'id_kh', 'id_kh', 'tenkh', 'diachi', 'email', 'sdt', 'tenkh', 'diachi', 'email', 'sdt', 'tenkh', 'diachi', 'email', 'sdt'
+        'makh', 'makh', 'hoten', 'email', 'matkhau', 'diachi', 'sdt', 'id_phanquyen', 'tenkh', 'diachi', 'email', 'sdt', 'tenkh', 'diachi', 'email', 'sdt', 'hoten', 'email', 'matkhau', 'diachi', 'sdt', 'id_phanquyen'
     ];
 
     /**
@@ -64,7 +72,7 @@ class Khachhang extends Model
      * @var array
      */
     protected $casts = [
-        'makh' => 'string', 'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int'
+        'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'id_kh' => 'int', 'hoten' => 'string', 'email' => 'string', 'matkhau' => 'string', 'diachi' => 'string', 'sdt' => 'int', 'id_phanquyen' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'hoten' => 'string', 'email' => 'string', 'matkhau' => 'string', 'diachi' => 'string', 'sdt' => 'int', 'id_phanquyen' => 'int'
     ];
 
     /**

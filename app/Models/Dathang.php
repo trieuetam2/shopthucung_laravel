@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int      $id_dathang
- * @property int      $id_kh
  * @property int      $id_dathang
  * @property int      $id_kh
  * @property int      $id_dathang
  * @property int      $id_kh
+ * @property int      $id_dathang
+ * @property int      $id_kh
+ * @property int      $tongtien
+ * @property int      $id_kh
  * @property int      $tongtien
  * @property int      $tongtien
  * @property int      $tongtien
@@ -18,16 +21,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property string   $makh
  * @property string   $madathang
  * @property string   $makh
- * @property string   $madathang
- * @property string   $makh
+ * @property string   $phuongthucthanhtoan
+ * @property string   $diachigiaohang
+ * @property string   $trangthai
+ * @property string   $trangthai
  * @property string   $trangthai
  * @property string   $giaohang
+ * @property string   $phuongthucthanhtoan
+ * @property string   $diachigiaohang
  * @property string   $trangthai
- * @property string   $trangthai
- * @property string   $giaohang
+ * @property DateTime $ngaydathang
+ * @property DateTime $ngaygiaohang
  * @property DateTime $ngaydathang
  * @property DateTime $ngaydathang
  * @property DateTime $ngaydathang
+ * @property DateTime $ngaygiaohang
  */
 class Dathang extends Model
 {
@@ -51,7 +59,7 @@ class Dathang extends Model
      * @var array
      */
     protected $fillable = [
-        'madathang', 'makh', 'id_kh', 'madathang', 'makh', 'id_kh', 'madathang', 'makh', 'id_kh', 'trangthai', 'tongtien', 'ngaydathang', 'giaohang', 'trangthai', 'tongtien', 'ngaydathang', 'trangthai', 'tongtien', 'ngaydathang', 'giaohang'
+        'madathang', 'makh', 'id_kh', 'madathang', 'makh', 'id_kh', 'id_kh', 'ngaydathang', 'ngaygiaohang', 'tongtien', 'phuongthucthanhtoan', 'diachigiaohang', 'trangthai', 'id_kh', 'trangthai', 'tongtien', 'ngaydathang', 'trangthai', 'tongtien', 'ngaydathang', 'giaohang', 'ngaydathang', 'ngaygiaohang', 'tongtien', 'phuongthucthanhtoan', 'diachigiaohang', 'trangthai'
     ];
 
     /**
@@ -69,7 +77,7 @@ class Dathang extends Model
      * @var array
      */
     protected $casts = [
-        'id_dathang' => 'int', 'madathang' => 'string', 'makh' => 'string', 'id_kh' => 'int', 'id_dathang' => 'int', 'madathang' => 'string', 'makh' => 'string', 'id_kh' => 'int', 'id_dathang' => 'int', 'madathang' => 'string', 'makh' => 'string', 'id_kh' => 'int', 'trangthai' => 'string', 'tongtien' => 'int', 'ngaydathang' => 'datetime', 'giaohang' => 'string', 'trangthai' => 'string', 'tongtien' => 'int', 'ngaydathang' => 'datetime', 'trangthai' => 'string', 'tongtien' => 'int', 'ngaydathang' => 'datetime', 'giaohang' => 'string'
+        'id_dathang' => 'int', 'id_dathang' => 'int', 'madathang' => 'string', 'makh' => 'string', 'id_kh' => 'int', 'id_dathang' => 'int', 'madathang' => 'string', 'makh' => 'string', 'id_kh' => 'int', 'id_dathang' => 'int', 'id_kh' => 'int', 'ngaydathang' => 'datetime', 'ngaygiaohang' => 'datetime', 'tongtien' => 'int', 'phuongthucthanhtoan' => 'string', 'diachigiaohang' => 'string', 'trangthai' => 'string', 'id_kh' => 'int', 'trangthai' => 'string', 'tongtien' => 'int', 'ngaydathang' => 'datetime', 'trangthai' => 'string', 'tongtien' => 'int', 'ngaydathang' => 'datetime', 'giaohang' => 'string', 'ngaydathang' => 'datetime', 'ngaygiaohang' => 'datetime', 'tongtien' => 'int', 'phuongthucthanhtoan' => 'string', 'diachigiaohang' => 'string', 'trangthai' => 'string'
     ];
 
     /**
@@ -78,7 +86,7 @@ class Dathang extends Model
      * @var array
      */
     protected $dates = [
-        'ngaydathang', 'ngaydathang', 'ngaydathang'
+        'ngaydathang', 'ngaygiaohang', 'ngaydathang', 'ngaydathang', 'ngaydathang', 'ngaygiaohang'
     ];
 
     /**
