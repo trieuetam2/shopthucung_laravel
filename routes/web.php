@@ -18,8 +18,11 @@ use App\Http\Controllers\DanhmucController;
 
 //Frontend
 Route::get('/', [HomeController:: class, 'index']);
+
 Route::get('/admin', [AdminController:: class, 'index']);
 Route::get('/dashboard', [AdminController:: class, 'dashboard']);
+Route::post('/signinDashboard', [AdminController:: class, 'signin_dashboard']);
+Route::get('/admin_logout', [AdminController:: class, 'admin_logout']);
 
 
 

@@ -3,13 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\IAdminRepository;
 
 class AdminController extends Controller
 {
+
+    private $AdminRepository;
+
+    public function __construct(IAdminRepository $AdminRepository) {
+        $this->AdminRepository = $AdminRepository;
+    }
+
     public function index(){
         return view('admin_login');
     }
     public function dashboard(){
         return view('admin.dashboard');
+    }
+    public function signin_dashboard(Request $request){
+        return $this->AdminRepository->signIn($request);
+    }
+    public function admin_logout(){
+        return $this->AdminRepository->logOut();
     }
 }

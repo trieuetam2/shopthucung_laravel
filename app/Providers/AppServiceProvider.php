@@ -4,8 +4,12 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Repositories\IAdminRepository;
+use App\Repositories\AdminRepository;
+
 use App\Repositories\IProductRepository;
 use App\Repositories\ProductRepository;
+
 
 use App\Repositories\IDanhmucRepository;
 use App\Repositories\DanhmucRepository;
@@ -19,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
        $this->app->bind(IProductRepository::class, ProductRepository::class);
        $this->app->bind(IDanhmucRepository::class, DanhmucRepository::class);
+       $this->app->bind(IAdminRepository::class, AdminRepository::class);
     }
 
     /**

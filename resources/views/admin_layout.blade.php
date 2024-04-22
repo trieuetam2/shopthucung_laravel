@@ -119,9 +119,11 @@
                   <img
                     src="{{ asset('backend/img/avatars/avatar.jpg')}}"
                     class="avatar img-fluid rounded-circle me-1"
-                    alt="Charles Hall"
+                    alt="Admin img"
                   />
-                  <span class="text-dark">Charles Hall</span>
+                  <span class="text-dark">
+                    <?php if(Session::get('admin_name')) echo Session::get('admin_name'); ?>
+                  </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                   <a class="dropdown-item" href="pages-profile.html"
@@ -141,7 +143,7 @@
                     Help Center</a
                   >
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="align-middle me-2" data-feather="log-out"></i> <span class="align-middle">log-out</span></a>
+                  <a class="dropdown-item" href="{{ URL::to('/admin_logout')}}"><i class="align-middle me-2" data-feather="log-out"></i> <span class="align-middle">log-out</span></a>
                 </div>
               </li>
             </ul>

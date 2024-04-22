@@ -38,14 +38,28 @@
 						<div class="card">
 							<div class="card-body">
 								<div class="m-sm-3">
-									<form>
+
+									<div>
+										<?php
+										$thongbao = Session::get('thongbao');
+										if($thongbao){
+											echo '<div class="text-danger text-center"> '.$thongbao.' </div>';
+											Session::put('thongbao', null);
+										}
+										?>
+									</div>
+
+									<form action="{{ URL::to('/signinDashboard') }}" method="post">
+
+										{{ csrf_field() }}
+									
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" />
+											<input class="form-control form-control-lg" type="email" name="admin_email" placeholder="Enter your email" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
+											<input class="form-control form-control-lg" type="password" name="admin_password" placeholder="Enter your password" />
 										</div>
 										<div>
 											<div class="form-check align-items-center">
@@ -54,7 +68,7 @@
 											</div>
 										</div>
 										<div class="d-grid gap-2 mt-3">
-											<a href="index.html" class="btn btn-lg btn-primary">Sign in</a>
+											<input class="btn btn-lg btn-primary" type="submit" value="Sign in">
 										</div>
 									</form>
 								</div>
@@ -68,6 +82,6 @@
 	</main>
 </body>
 
-<script src="{{ asset('js/app.js')}}"></script>
+<script src="{{ asset('backend/js/app.js')}}"></script>
 
 </html>
