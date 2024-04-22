@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('id_kh', true);
             $table->string('hoten', 100)->nullable();
             $table->string('email', 100)->nullable();
-            $table->string('matkhau', 100)->nullable();
+            $table->string('password', 100)->nullable();
             $table->string('diachi')->nullable();
             $table->integer('sdt')->nullable();
             $table->integer('id_phanquyen')->index('fk_dk');

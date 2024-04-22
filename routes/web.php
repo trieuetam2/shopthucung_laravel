@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\DanhmucController;
+
+use App\Http\Controllers\{
+    HomeController,
+    AdminController,
+    ProductController,
+    DanhmucController
+};
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,20 +23,24 @@ use App\Http\Controllers\DanhmucController;
 //Frontend
 Route::get('/', [HomeController:: class, 'index']);
 
-Route::get('/admin', [AdminController:: class, 'index']);
-Route::get('/dashboard', [AdminController:: class, 'dashboard']);
-Route::post('/signinDashboard', [AdminController:: class, 'signin_dashboard']);
-Route::get('/admin_logout', [AdminController:: class, 'admin_logout']);
 
 
 
 
+Route::prefix('/')->group(function() {
+    Route::get('/admin', [AdminController:: class, 'index']);
+    Route::post('/signinDashboard', [AdminController:: class, 'signin_dashboard']);
+});
+
+
+Route::prefix('/')->middleware('admin.login')->group(function(){
+    Route::get('/dashboard', [AdminController:: class, 'dashboard']);
+    Route::get('/admin_logout', [AdminController:: class, 'admin_logout']); 
+});
 
 
 
 //Backend
-
-
 
 
 

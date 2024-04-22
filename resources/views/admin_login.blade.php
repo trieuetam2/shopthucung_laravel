@@ -55,7 +55,7 @@
 									
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="email" name="admin_email" placeholder="Enter your email" />
+											<input class="form-control form-control-lg" type="text" name="admin_email" placeholder="Enter your email" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>

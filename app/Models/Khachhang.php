@@ -4,96 +4,49 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @property int    $id_kh
- * @property int    $id_kh
- * @property int    $id_kh
- * @property int    $id_kh
- * @property int    $sdt
- * @property int    $id_phanquyen
- * @property int    $sdt
- * @property int    $sdt
- * @property int    $sdt
- * @property int    $id_phanquyen
- * @property string $makh
- * @property string $makh
- * @property string $hoten
- * @property string $email
- * @property string $matkhau
- * @property string $diachi
- * @property string $tenkh
- * @property string $diachi
- * @property string $email
- * @property string $tenkh
- * @property string $diachi
- * @property string $email
- * @property string $hoten
- * @property string $email
- * @property string $matkhau
- * @property string $diachi
- */
-class Khachhang extends Model
-{
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'khachhang';
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-    /**
-     * The primary key for the model.
-     *
-     * @var string
-     */
+class Khachhang extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = 'khachhang';
     protected $primaryKey = 'id_kh';
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'makh', 'makh', 'hoten', 'email', 'matkhau', 'diachi', 'sdt', 'id_phanquyen', 'tenkh', 'diachi', 'email', 'sdt', 'tenkh', 'diachi', 'email', 'sdt', 'hoten', 'email', 'matkhau', 'diachi', 'sdt', 'id_phanquyen'
+        'hoten', 'email', 'password', 'diachi', 'sdt', 'id_phanquyen'
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        
+        'password', // Hide the password field if needed
     ];
 
     /**
-     * The attributes that should be casted to native types.
+     * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [
-        'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'makh' => 'string', 'id_kh' => 'int', 'id_kh' => 'int', 'hoten' => 'string', 'email' => 'string', 'matkhau' => 'string', 'diachi' => 'string', 'sdt' => 'int', 'id_phanquyen' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'tenkh' => 'string', 'diachi' => 'string', 'email' => 'string', 'sdt' => 'int', 'hoten' => 'string', 'email' => 'string', 'matkhau' => 'string', 'diachi' => 'string', 'sdt' => 'int', 'id_phanquyen' => 'int'
-    ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = [
-        
+        'id_kh' => 'int',
+        'sdt' => 'int',
+        'id_phanquyen' => 'int',
     ];
 
     /**
      * Indicates if the model should be timestamped.
      *
-     * @var boolean
+     * @var bool
      */
     public $timestamps = false;
 
-    // Scopes...
 
-    // Functions ...
-
-    // Relations ...
+    // Define any additional relationships or methods as needed...
 }
