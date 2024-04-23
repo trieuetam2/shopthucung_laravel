@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('anhsp')->nullable();
             $table->integer('giasp')->nullable();
             $table->text('mota')->nullable();
-            $table->decimal('giamgia', 2, 1)->nullable();
+            $table->integer('giamgia')->nullable();
+            $table->integer('soluong')->nullable();
             $table->integer('id_danhmuc')->index('fk_customer');
         });
     }

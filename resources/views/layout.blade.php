@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/bsgrid.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css') }}" />
 
-    
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
 </head>
@@ -34,7 +32,7 @@
                     <i id="bars" class="fa fa-bars" aria-hidden="true"></i>
                     <ul>
                         <li><a href="{{ URL::to('/')}}">Trang chủ</a></li>
-                        <li><a href="index.html?page=congiong">Con giống</a></li>
+                        <li><a href="{{ URL::to('/congiong')}}">Con giống</a></li>
                         <li>
                             <a href="index.html?page=yourorder">Đơn hàng</a>
                         </li>
@@ -44,8 +42,8 @@
             </div>
 
             <div class="navbar__center">
-                <form action="" method="GET" class="navbar__search">
-                    <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="txtsearch" class="search" required>
+                <form action="{{route('search')}}" method="GET" class="navbar__search">
+                    <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="tukhoa" class="search" required>
                     <i class="fa fa-search" id="searchBtn"></i>
                 </form>
             </div>

@@ -24,6 +24,9 @@
 
     <title>Admin Dashboard</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <link href="{{ asset('backend/css/app.css')}}" rel="stylesheet" />
     <link href="{{ asset('backend/css/style.css')}}" rel="stylesheet" />
     <link
@@ -44,14 +47,14 @@
             <li class="sidebar-header">Pages</li>
 
             <li class="sidebar-item active">
-              <a class="sidebar-link" href="index.html">
+              <a class="sidebar-link" href="{{URL::to('/dashboard')}}">
                 <i class="align-middle" data-feather="sliders"></i>
                 <span class="align-middle">Dashboard</span>
               </a>
             </li>
 
             <li class="sidebar-item">
-              <a class="sidebar-link" href="products.html">
+              <a class="sidebar-link" href="{{URL::to('/admin/product')}}">
                 <i class="align-middle" data-feather="box"></i>
                 <span class="align-middle">Products</span>
               </a>
@@ -103,13 +106,6 @@
             <ul class="navbar-nav navbar-align">
 
               <li class="nav-item dropdown">
-                <a
-                  class="nav-icon dropdown-toggle d-inline-block d-sm-none"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                >
-                  <i class="align-middle" data-feather="settings"></i>
-                </a>
 
                 <a
                   class="nav-link dropdown-toggle d-none d-sm-inline-block"
@@ -220,6 +216,31 @@
     </div>
 
     <script src="{{ asset('backend/js/app.js')}}"></script>
+
+    <style>
+      .dropdown-menu.show {
+          display: block;
+      }
+    </style>
+
+  <script>
+
+// Lấy phần tử dropdown-menu-end
+const drop = document.querySelector('.nav-link.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu-end');
+
+// Thêm sự kiện click
+drop.addEventListener('click', function(event) {
+    // Ngăn chặn hành vi mặc định của sự kiện click
+    event.preventDefault();
+    // Toggle hiển thị/ẩn thẻ có class là .dropdown-menu.dropdown-menu-end.show
+    dropdownMenu.classList.toggle('show');
+    // Thêm thuộc tính data-bs-popper với giá trị "static"
+    dropdownMenu.setAttribute('data-bs-popper', 'static');
+});
+
+
+  </script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

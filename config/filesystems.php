@@ -56,6 +56,14 @@ return [
             'throw' => false,
         ],
 
+        'public_frontend' => [
+            'driver' => 'local',
+            'root' => public_path('frontend'), // Đường dẫn tới thư mục lưu trữ
+            'url' => env('APP_URL').'/frontend', // URL để truy cập vào các tập tin trong thư mục lưu trữ
+            'visibility' => 'public',
+        ],
+        
+
     ],
 
     /*

@@ -32,252 +32,47 @@
 
         <div class="row">
             <div class="post-wrapper2">
+                @foreach($sanphams as $sanpham)
                 <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="details.html">
+                    <a href="{{ route('detail', ['id' => $sanpham->id_sanpham]) }}">
                         <div class="product">
                             <div class="product__img">
-                                <img src="{{ asset('frontend/img/BG-1.jpg')}}" alt="">
+                                <img src="{{$sanpham->anhsp}}" alt="">
                             </div>
-
                             <div class="product__sale">
-                                <h4>Mới</h4>
+                                <div>Mới</div>
                             </div>
 
-                          
                             <div class="product__content">
                                 <div class="product__title">
-                                    Do an cho cho
+                                    {{$sanpham->tensp}}
                                 </div>
 
                                 <div class="product__pride-oldPride">
                                     <span class="Price">
                                         <bdi>
-                                            500.000
+                                            300000
+                                            <span class="currencySymbol">₫</span>
+                                        </bdi>
+                                    </span>
+                                </div>
+
+                                <div class="product__pride-newPride">
+                                    <span class="Price">
+                                        <bdi>
+                                            {{$sanpham->giasp}}
                                             <span class="currencySymbol">₫</span>
                                         </bdi>
                                     </span>
                                 </div>
 
                             </div>
+    
                         </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
+ 
                     </a>
                 </div>
-                <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="#">
-                        <div class="product">
-                            <div class="product__img">
-                                <img src="{{ asset('frontend/img/camcho.jpg')}}" alt="">
-                            </div>
-
-                            <div class="product__sale">
-                                <h4>Mới</h4>
-                            </div>
-
-                          
-                            <div class="product__content">
-                                <div class="product__title">
-                                    Do an cho cho
-                                </div>
-
-                                <div class="product__pride-oldPride">
-                                    <span class="Price">
-                                        <bdi>
-                                            500.000
-                                            <span class="currencySymbol">₫</span>
-                                        </bdi>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="#">
-                        <div class="product">
-                            <div class="product__img">
-                                <img src="{{ asset('frontend/img/dohop.jpg')}}" alt="">
-                            </div>
-
-                            <div class="product__sale">
-                                <h4>Mới</h4>
-                            </div>
-
-                          
-                            <div class="product__content">
-                                <div class="product__title">
-                                    Do an cho cho
-                                </div>
-
-                                <div class="product__pride-oldPride">
-                                    <span class="Price">
-                                        <bdi>
-                                            500.000
-                                            <span class="currencySymbol">₫</span>
-                                        </bdi>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="#">
-                        <div class="product">
-                            <div class="product__img">
-                                <img src="{{ asset('frontend/img/doanchomeoloai3.jpg')}}" alt="">
-                            </div>
-
-                            <div class="product__sale">
-                                <h4>Mới</h4>
-                            </div>
-
-                          
-                            <div class="product__content">
-                                <div class="product__title">
-                                    Do an cho cho
-                                </div>
-
-                                <div class="product__pride-oldPride">
-                                    <span class="Price">
-                                        <bdi>
-                                            500.000
-                                            <span class="currencySymbol">₫</span>
-                                        </bdi>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="#">
-                        <div class="product">
-                            <div class="product__img">
-                                <img src="{{ asset('frontend/img/dohop2.jpg')}}" alt="">
-                            </div>
-
-                            <div class="product__sale">
-                                <h4>Mới</h4>
-                            </div>
-
-                          
-                            <div class="product__content">
-                                <div class="product__title">
-                                    Do an cho cho
-                                </div>
-
-                                <div class="product__pride-oldPride">
-                                    <span class="Price">
-                                        <bdi>
-                                            500.000
-                                            <span class="currencySymbol">₫</span>
-                                        </bdi>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2_5 col-md-4 col-6 post2">
-                    <a href="#">
-                        <div class="product">
-                            <div class="product__img">
-                                <img src="{{ asset('frontend/img/camcho.jpg')}}" alt="">
-                            </div>
-
-                            <div class="product__sale">
-                                <h4>Mới</h4>
-                            </div>
-
-                          
-                            <div class="product__content">
-                                <div class="product__title">
-                                    Do an cho cho
-                                </div>
-
-                                <div class="product__pride-oldPride">
-                                    <span class="Price">
-                                        <bdi>
-                                            500.000
-                                            <span class="currencySymbol">₫</span>
-                                        </bdi>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="product__pride-newPride">
-                                <span class="Price">
-                                    <bdi>
-                                        380.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -334,214 +129,47 @@
 
     <div class="dogfood active">
         <div class="row">
-            
+            @foreach($dogproducts as $dogproduct)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="{{$dogproduct->anhsp}}" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$dogproduct->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$dogproduct->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/doanchomeoloai3.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop2.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/camcho.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-
+            @endforeach
         </div>
     </div>
 
@@ -551,41 +179,39 @@
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="/upload/abc.png" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$sanpham->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$sanpham->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
         </div>
@@ -597,41 +223,39 @@
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="/upload/abc.png" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$sanpham->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$sanpham->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
             
@@ -641,7 +265,7 @@
 
 <div class="banner">
     <div class="banner-top">
-        <img src="./img/BG-2.jpg" />
+        <img src="{{ asset('frontend/img/BG-2.jpg')}}" />
     </div>
 </div>
 
@@ -662,211 +286,47 @@
 
     <div class="catfood active">
         <div class="row">
+            @foreach($catproducts as $catproduct)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="{{$catproduct->anhsp}}" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$catproduct->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$catproduct->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/doanchomeoloai3.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop2.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/camcho.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -876,41 +336,39 @@
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="/upload/abc.png" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$sanpham->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$sanpham->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
 
@@ -923,41 +381,39 @@
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="/upload/abc.png" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$sanpham->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$sanpham->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
         </div>
@@ -967,9 +423,9 @@
 <div class="banner">
 
     <div class="row banner-top">
-        <img class="col-md-4 col-sm-6" src="./img/BG-1.jpg" />
-        <img class="col-md-4 col-sm-6" src="./img/BG-2.jpg" />
-        <img class="col-md-4 col-sm-6" src="./img/BG-3.jpg" />
+        <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-1.jpg')}}" />
+        <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-2.jpg')}}" />
+        <img class="col-md-4 col-sm-6" src="{{ asset('frontend/img/BG-3.jpg')}}" />
     </div>
 </div>
 
@@ -989,258 +445,93 @@
 
     <div class="dog active">
         <div class="row">
+            @foreach($choGiongs as $choGiong)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="{{$choGiong->anhsp}}" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$choGiong->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$choGiong->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/doanchomeoloai3.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop2.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/camcho.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 
     <div class="cat">
         <div class="row">
+            @foreach($meoGiongs as $meoGiong)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="{{$meoGiong->anhsp}}" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$meoGiong->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$meoGiong->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
-
+            @endforeach
         </div>
     </div>
 
@@ -1255,379 +546,50 @@
 
     <div>
         <div class="row">
+            @foreach($alls as $all)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
                 <a href="#">
                     <div class="product">
                         <div class="product__img">
-                            <img src="./img/thucan.jpg" alt="">
+                            <img src="{{$all->anhsp}}" alt="">
                         </div>
-
                         <div class="product__sale">
-                            <h4>Mới</h4>
+                            <div>Mới</div>
                         </div>
 
-                      
                         <div class="product__content">
                             <div class="product__title">
-                                Do an cho cho
+                                {{$all->tensp}}
                             </div>
 
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        500.000
+                                        300000
+                                        <span class="currencySymbol">₫</span>
+                                    </bdi>
+                                </span>
+                            </div>
+
+                            <div class="product__pride-newPride">
+                                <span class="Price">
+                                    <bdi>
+                                        {{$all->giasp}}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
 
                         </div>
+
                     </div>
 
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
                 </a>
             </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/doanchomeoloai3.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop2.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/camcho.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/doanchomeoloai3.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/dohop2.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
-                    <div class="product">
-                        <div class="product__img">
-                            <img src="./img/camcho.jpg" alt="">
-                        </div>
-
-                        <div class="product__sale">
-                            <h4>Mới</h4>
-                        </div>
-
-                      
-                        <div class="product__content">
-                            <div class="product__title">
-                                Do an cho cho
-                            </div>
-
-                            <div class="product__pride-oldPride">
-                                <span class="Price">
-                                    <bdi>
-                                        500.000
-                                        <span class="currencySymbol">₫</span>
-                                    </bdi>
-                                </span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="product__pride-newPride">
-                            <span class="Price">
-                                <bdi>
-                                    380.000
-                                    <span class="currencySymbol">₫</span>
-                                </bdi>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
+            @endforeach
         </div>
         <center style="margin-top: 30px;">
-            <a href="#" class="btn text-white" style="background: crimson;">Xem thêm</a>
+            <a href="{{route('viewAll')}}" class="btn text-white" style="background: #ff4500;">Xem thêm</a>
         </center>
     </div>
 
