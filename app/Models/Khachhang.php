@@ -2,20 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class Khachhang extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, Notifiable;
 
-    protected $table = 'khachhang';
-    protected $primaryKey = 'id_kh';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'hoten', 'email', 'password', 'diachi', 'sdt', 'id_phanquyen'
     ];
@@ -47,6 +46,17 @@ class Khachhang extends Authenticatable
      */
     public $timestamps = false;
 
+    /**
+     * The name of the table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'khachhang';
 
-    // Define any additional relationships or methods as needed...
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_kh';
 }

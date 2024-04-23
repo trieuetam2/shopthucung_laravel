@@ -55,11 +55,11 @@
 									
 										<div class="mb-3">
 											<label class="form-label">Email</label>
-											<input class="form-control form-control-lg" type="text" name="admin_email" placeholder="Enter your email" />
+											<input class="form-control form-control-lg" type="text" name="email" placeholder="Enter your email" />
 										</div>
 										<div class="mb-3">
 											<label class="form-label">Password</label>
-											<input class="form-control form-control-lg" type="password" name="admin_password" placeholder="Enter your password" />
+											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
 										</div>
 										<div>
 											<div class="form-check align-items-center">

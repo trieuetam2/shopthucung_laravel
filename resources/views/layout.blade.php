@@ -26,14 +26,14 @@
             
         <div class="navbar">
             <div class="navbar__left">
-                <a href="index.html" class="navbar__logo">
+                <a href="{{ URL::to('/')}}" class="navbar__logo">
                     <img src="{{ asset('frontend/img/logo.jpg') }}" alt="">
                 </a>
 
                 <div class="navbar__menu">
                     <i id="bars" class="fa fa-bars" aria-hidden="true"></i>
                     <ul>
-                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="{{ URL::to('/')}}">Trang chủ</a></li>
                         <li><a href="index.html?page=congiong">Con giống</a></li>
                         <li>
                             <a href="index.html?page=yourorder">Đơn hàng</a>
@@ -52,10 +52,25 @@
 
             <div class="navbar__right">
 
-                <div class="login">
-                    <a href="login.html"><i class="fa fa-user"></i></a>
-                </div>
+                @if (Auth::check())
+                <!-- Hiển thị nút logout -->
 
+                <span class="mr-2">{{Auth::user()->hoten}}</span>
+
+                <div class="logout">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button style="border: none;" type="submit"><i class="fas fa-sign-out-alt text-primary"></i></button>
+                    </form>
+                </div>
+                @else
+                    <!-- Hiển thị nút login -->
+                    <div class="login">
+                        <a href="{{ URL::to('login')}}"><i class="fa fa-user"></i> </a>
+                    </div>
+                @endif
+            
                 <a href="index.html?page=cart" class="navbar__shoppingCart">
                     <img src="{{ asset('frontend/img/shopping-cart.svg')}}" style="width: 24px;" alt="">
                     
@@ -64,24 +79,6 @@
             </div>
         </div>
 
-    </div>
-
-    <div class="post-slider">
-        <i class="fa fa-chevron-left prev" aria-hidden="true"></i>
-        <i class="fa fa-chevron-right next" aria-hidden="true"></i>
-    
-        <div class="post-wrapper">
-            <div class="post">
-                <img src="{{ asset('frontend/img/BG-1.jpg')}}" alt="">
-            </div>
-            <div class="post">
-                <img src="{{ asset('frontend/img/BG-2.jpg')}}" alt="">
-            </div>
-            <div class="post">
-                <img src="{{ asset('frontend/img/BG-3.jpg')}}" alt="">
-            </div>
-        </div>
-    
     </div>
 
     <!-- Content -->
@@ -112,7 +109,7 @@
 
             <div class="footer__info-content">
                 <h3>Liên hệ</h3>
-                <p>Địa chỉ: 475 Điện Biên Phủ, Hutech khu A,B</p>
+                <p>Địa chỉ: 561 Su Van Hanh StreetWard 13, District 10</p>
                 <p>Email: trieuetam@gmail.com</p>
                 <p>Sđt: 123456789</p>
             </div>

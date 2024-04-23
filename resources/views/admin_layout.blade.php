@@ -122,7 +122,7 @@
                     alt="Admin img"
                   />
                   <span class="text-dark">
-                    <?php if(Session::get('admin_name')) echo Session::get('admin_name'); ?>
+                    {{Auth::user()->hoten}}
                   </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
