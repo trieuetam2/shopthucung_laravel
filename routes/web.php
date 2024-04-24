@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\admin\{AdminController, ProductController,};
+use App\Http\Controllers\admin\{AdminController, ProductController,DanhmucController};
 
 use App\Http\Controllers\{
     HomeController,
-    DanhmucController,
     AuthController
 };
 
@@ -39,6 +38,7 @@ Route::delete('/logout', [AuthController:: class, 'logout'])->name('logout');
 
 
 
+//admin
 Route::prefix('/')->group(function() {
     Route::get('/admin', [AdminController:: class, 'index']);
     Route::post('/signinDashboard', [AdminController:: class, 'signin_dashboard']);
@@ -48,23 +48,25 @@ Route::prefix('/')->group(function() {
 Route::prefix('/')->middleware('admin.login')->group(function(){
     Route::get('/dashboard', [AdminController:: class, 'dashboard']);
     Route::get('/admin_logout', [AdminController:: class, 'admin_logout']); 
+    
+    Route::get('/admin/product', [ProductController:: class, 'index'])->name('product.index');
+    Route::get('/admin/product/search', [AdminController:: class, 'search'])->name('adminSearch');
+    Route::get('/admin/product/create', [ProductController:: class, 'create'])->name('product.create');
+    Route::post('/admin/product', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/admin/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/admin/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/admin/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+    
+    Route::get('/admin/danhmuc', [DanhmucController::class, 'index'])->name('danhmuc.index');
+    Route::get('/admin/danhmuc/create', [DanhmucController:: class, 'create'])->name('danhmuc.create');
+    Route::post('/admin/danhmuc', [DanhmucController::class, 'store'])->name('danhmuc.store');
+    Route::get('/admin/danhmuc/edit/{danhmuc}', [DanhmucController::class, 'edit'])->name('danhmuc.edit');
+    Route::put('/admin/danhmuc/update/{danhmuc}', [DanhmucController::class, 'update'])->name('danhmuc.update');
+    Route::delete('/admin/danhmuc/{danhmuc}/destroy', [DanhmucController::class, 'destroy'])->name('danhmuc.destroy');
 });
 
 
 
-//Backend
 
 
-
-
-//khac
-Route::get('/admin/product', [ProductController:: class, 'index'])->name('product.index');
-Route::get('/admin/product/create', [ProductController:: class, 'create'])->name('product.create');
-Route::post('/admin/product', [ProductController::class, 'store'])->name('product.store');
-
-Route::get('/admin/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
-Route::put('/admin/product/update/{product}', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/admin/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
-
-Route::get('/Danhmuc', [DanhmucController::class, 'index'])->name('Danhmuc.index');
 

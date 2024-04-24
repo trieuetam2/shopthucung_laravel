@@ -19,7 +19,20 @@ class AdminController extends Controller
         return view('admin_login');
     }
     public function dashboard(){
-        return view('admin.dashboard');
+        $totalsCustomer = $this->AdminRepository->totalsCustomer();
+        $totalsOrders = $this->AdminRepository->totalsOrders();
+        $totalsMoney = $this->AdminRepository->totalsMoney();
+        $totalsSaleProducts = $this->AdminRepository->totalsSaleProducts();
+        return view('admin.dashboard', 
+        ['totalsCustomer' => $totalsCustomer,
+         'totalsOrders' =>  $totalsOrders, 
+         'totalsMoney' => $totalsMoney, 
+         'totalsSaleProducts' => $totalsSaleProducts
+        ]);
+    }
+    public function search(Request $request){
+        $searchs = $this->AdminRepository->searchProduct($request);
+        return view('admin.products.search')->with('searchs', $searchs)->with('tukhoa', $request->input('tukhoa'));
     }
     public function signin_dashboard(Request $request){
         return $this->AdminRepository->signIn($request);

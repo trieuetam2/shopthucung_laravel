@@ -10,7 +10,18 @@
     @endif
 </div>
 
-<a class="btn btn-primary" href="{{route('product.create')}}">Thêm sản phẩm</a>
+<div class="d-flex justify-content-between">
+  <a class="btn btn-primary" href="{{route('product.create')}}">Thêm sản phẩm</a>
+
+  <form action="{{route('adminSearch')}}" method="GET" class="d-flex">
+      <input type="text" value="" placeholder="Nhập để tìm kiếm..." name="tukhoa" class="form-control" style="width: unset;" required>
+      <button class="btn btn-primary" type="submit">
+        <i class="align-middle" data-feather="search"></i> 
+      </button>
+  </form>
+
+</div>
+
 
 <table class="table">
 <thead>
@@ -30,7 +41,7 @@
     <td>{{$product->soluong}}</td>
     <td>{{$product->giasp}}</td>
     <td colspan="2">
-        <a href="{{ route('product.edit', ['product' => $product]) }}" class="btn btn-warning mb-2">edit</a>
+        <a href="{{ route('product.edit', ['product' => $product]) }}" class="btn btn-warning mb-2">Edit</a>
         <form method="post" action="{{route('product.destroy', ['product' => $product])}}">
             @csrf
             @method('delete')

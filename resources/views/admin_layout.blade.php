@@ -39,59 +39,58 @@
     <div class="wrapper">
       <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
-          <a class="sidebar-brand" href="index.html">
-            <span class="align-middle">Dashboard</span>
+          <a class="sidebar-brand" href="{{URL::to('/dashboard')}}">
+            <span class="align-middle">Shop thú cưng</span>
           </a>
 
           <ul class="sidebar-nav">
             <li class="sidebar-header">Pages</li>
-
-            <li class="sidebar-item active">
-              <a class="sidebar-link" href="{{URL::to('/dashboard')}}">
-                <i class="align-middle" data-feather="sliders"></i>
-                <span class="align-middle">Dashboard</span>
-              </a>
-            </li>
-
+        
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{URL::to('/admin/product')}}">
-                <i class="align-middle" data-feather="box"></i>
-                <span class="align-middle">Products</span>
-              </a>
+                <a class="sidebar-link" href="{{URL::to('/dashboard')}}">
+                    <i class="align-middle" data-feather="sliders"></i>
+                    <span class="align-middle">Dashboard</span>
+                </a>
             </li>
-
+        
             <li class="sidebar-item">
-              <a class="sidebar-link" href="categories.html">
-                <i class="align-middle" data-feather="tag"></i>
-                <span class="align-middle">Categories</span>
-              </a>
+                <a class="sidebar-link" href="{{URL::to('/admin/product')}}">
+                    <i class="align-middle" data-feather="box"></i>
+                    <span class="align-middle">Products</span>
+                </a>
             </li>
-
-
+        
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{URL::to('/admin/danhmuc')}}">
+                    <i class="align-middle" data-feather="tag"></i>
+                    <span class="align-middle">Categories</span>
+                </a>
+            </li>
+        
             <li class="sidebar-header">Tools & Components</li>
-
+        
             <li class="sidebar-item">
-              <a class="sidebar-link" href="ui-forms.html">
-                <i class="align-middle" data-feather="check-square"></i>
-                <span class="align-middle">Forms</span>
-              </a>
+                <a class="sidebar-link" href="ui-forms.html">
+                    <i class="align-middle" data-feather="check-square"></i>
+                    <span class="align-middle">Forms</span>
+                </a>
             </li>
-
+        
             <li class="sidebar-item">
-              <a class="sidebar-link" href="icons-feather.html">
-                <i class="align-middle" data-feather="coffee"></i>
-                <span class="align-middle">Icons</span>
-              </a>
+                <a class="sidebar-link" href="icons-feather.html">
+                    <i class="align-middle" data-feather="coffee"></i>
+                    <span class="align-middle">Icons</span>
+                </a>
             </li>
-
+        
             <li class="sidebar-item">
-              <a class="sidebar-link" href="ui-buttons.html">
-                <i class="align-middle" data-feather="coffee"></i>
-                <span class="align-middle">Button</span>
-              </a>
+                <a class="sidebar-link" href="ui-buttons.html">
+                    <i class="align-middle" data-feather="coffee"></i>
+                    <span class="align-middle">Button</span>
+                </a>
             </li>
-
-          </ul>
+        </ul>
+        
 
         </div>
       </nav>
@@ -225,19 +224,45 @@
 
   <script>
 
-// Lấy phần tử dropdown-menu-end
-const drop = document.querySelector('.nav-link.dropdown-toggle');
-const dropdownMenu = document.querySelector('.dropdown-menu-end');
+  // Lấy phần tử dropdown-menu-end
+  const drop = document.querySelector('.nav-link.dropdown-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu-end');
 
-// Thêm sự kiện click
-drop.addEventListener('click', function(event) {
-    // Ngăn chặn hành vi mặc định của sự kiện click
-    event.preventDefault();
-    // Toggle hiển thị/ẩn thẻ có class là .dropdown-menu.dropdown-menu-end.show
-    dropdownMenu.classList.toggle('show');
-    // Thêm thuộc tính data-bs-popper với giá trị "static"
-    dropdownMenu.setAttribute('data-bs-popper', 'static');
+  // Thêm sự kiện click
+  drop.addEventListener('click', function(event) {
+      // Ngăn chặn hành vi mặc định của sự kiện click
+      event.preventDefault();
+      // Toggle hiển thị/ẩn thẻ có class là .dropdown-menu.dropdown-menu-end.show
+      dropdownMenu.classList.toggle('show');
+      // Thêm thuộc tính data-bs-popper với giá trị "static"
+      dropdownMenu.setAttribute('data-bs-popper', 'static');
+  });
+
+// Get current URL
+var currentUrl = window.location.href;
+
+// Select all sidebar links
+var sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+// Loop through each link
+sidebarLinks.forEach(function(link) {
+    // Check if the link's href matches the current URL
+    if (link.href === currentUrl) {
+        // Add 'active' class to parent sidebar-item
+        link.closest('.sidebar-item').classList.add('active');
+    }
+
+    // Add event listener to each link
+    link.addEventListener('click', function() {
+        // Remove 'active' class from all sidebar-items
+        document.querySelectorAll('.sidebar-item').forEach(function(item) {
+            item.classList.remove('active');
+        });
+        // Add 'active' class to clicked sidebar-item
+        link.closest('.sidebar-item').classList.add('active');
+    });
 });
+
 
 
   </script>

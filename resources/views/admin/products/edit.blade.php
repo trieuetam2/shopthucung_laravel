@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
-<h1>edit</h1>
+<h1 class="h3 mb-3"><strong>Sửa sản phẩm</strong></h1>
 
     <div class="err">
         @if($errors->any())
