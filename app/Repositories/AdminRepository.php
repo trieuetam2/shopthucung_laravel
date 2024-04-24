@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Models\Khachhang;
 use App\Models\Sanpham;
 use App\Models\Dathang;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,6 +37,10 @@ class AdminRepository implements IAdminRepository{
         return Sanpham::where('tensp', 'like', '%' . $searchKeyword . '%')->paginate(5);
     }
 
+    public function getOrderView()
+    {
+        return Dathang::orderby('id_dathang', 'desc')->take(6)->get();
+    }
     public function totalsCustomer()
     {
         return Khachhang::count();

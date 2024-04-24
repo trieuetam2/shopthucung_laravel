@@ -11,13 +11,18 @@
         <div class="row">
             @foreach($sanphams as $sanpham)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $sanpham->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$sanpham->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($sanpham->giamgia)
+                                    -{{$sanpham->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -28,7 +33,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($sanpham->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -37,16 +42,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$sanpham->giasp}}
+                                        {{ number_format($sanpham->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach

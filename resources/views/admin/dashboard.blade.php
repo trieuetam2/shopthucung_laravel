@@ -129,74 +129,52 @@
             <table class="table table-hover my-0">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th class="d-none d-xl-table-cell">Start Date</th>
-                  <th class="d-none d-xl-table-cell">End Date</th>
-                  <th>Status</th>
-                  <th class="d-none d-md-table-cell">Assignee</th>
+                  <th>ID</th>
+                  <th>Phương thức tt</th>
+                  <th>Ngày đặt</th>
+                  <th>Ngày giao</th>
+                  <th>Trạng thái</th>
+                  <th>Địa chỉ giao hàng</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach($getOrderView as $order)
                 <tr>
-                  <td>Project Apollo</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                </tr>
-                <tr>
-                  <td>Project Fireball</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-danger">Cancelled</span></td>
-                  <td class="d-none d-md-table-cell">William Harris</td>
-                </tr>
-                <tr>
-                  <td>Project Hades</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                </tr>
-                <tr>
-                  <td>Project Nitro</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
+                  <td>{{$order->id_dathang}}</td>
+          
+                  @if ($order->phuongthucthanhtoan == "COD")
+                    <td class="d-none d-xl-table-cell"><div class="badge bg-primary">{{$order->phuongthucthanhtoan}}</div></td>
+                  @elseif ($order->phuongthucthanhtoan == "MOMO")
+                    <td class="d-none d-xl-table-cell"><div class="badge bg-danger">{{$order->phuongthucthanhtoan}}</div></td>
+                  @else
+                  <td class="d-none d-xl-table-cell">{{$order->phuongthucthanhtoan}}</td>
+                  @endif
+          
+                  <td class="d-none d-xl-table-cell">{{$order->ngaydathang}}</td>
+                    @if ($order->ngaygiaohang)
+                      <td class="d-none d-xl-table-cell">{{ date('d/m/Y', strtotime($order->ngaygiaohang)) }}</td>
+                    @else
+                      <td></td>
+                    @endif
                   <td>
-                    <span class="badge bg-warning">In progress</span>
+                    @if($order->trangthai == 'đang xử lý')
+                      <span class="badge bg-primary">{{$order->trangthai}}</span>
+                    @elseif ($order->trangthai == 'chờ lấy hàng')
+                      <span class="badge bg-warning">{{$order->trangthai}}</span>
+                    @elseif ($order->trangthai == 'đang giao hàng')
+                      <span class="badge bg-success">{{$order->trangthai}}</span>
+                    @elseif ($order->trangthai == 'giao thành công')
+                      <span class="badge bg-success">{{$order->trangthai}}</span>
+                    @else
+                      <span class="badge bg-danger">{{$order->trangthai}}</span>
+                    @endif
                   </td>
-                  <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                  <td class="d-none d-md-table-cell">{{$order->diachigiaohang}}</td>
+                  <td class="d-none d-md-table-cell"><a href="{{ route('orders.edit', ['orders' => $order->id_dathang]) }}" class="btn btn-primary">Edit</a></td>
                 </tr>
                 <tr>
-                  <td>Project Phoenix</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">William Harris</td>
-                </tr>
-                <tr>
-                  <td>Project X</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                </tr>
-                <tr>
-                  <td>Project Romeo</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td><span class="badge bg-success">Done</span></td>
-                  <td class="d-none d-md-table-cell">Christina Mason</td>
-                </tr>
-                <tr>
-                  <td>Project Wombat</td>
-                  <td class="d-none d-xl-table-cell">01/01/2023</td>
-                  <td class="d-none d-xl-table-cell">31/06/2023</td>
-                  <td>
-                    <span class="badge bg-warning">In progress</span>
-                  </td>
-                  <td class="d-none d-md-table-cell">William Harris</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

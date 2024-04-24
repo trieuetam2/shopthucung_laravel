@@ -26,7 +26,7 @@ class Sanpham extends Model
      * @var array
      */
     protected $fillable = [
-        'tensp', 'anhsp', 'giasp', 'mota', 'giamgia', 'soluong', 'id_danhmuc'
+        'tensp', 'anhsp', 'giasp', 'mota', 'giamgia', 'giakhuyenmai', 'soluong', 'id_danhmuc'
     ];
 
     /**
@@ -41,6 +41,7 @@ class Sanpham extends Model
         'giasp' => 'int',
         'mota' => 'string',
         'giamgia' => 'int',
+        'giakhuyenmai' => 'int',
         'soluong' => 'int',
         'id_danhmuc' => 'int'
     ];

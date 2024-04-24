@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\admin\{AdminController, ProductController,DanhmucController};
+use App\Http\Controllers\admin\{AdminController, ProductController,DanhmucController, OrderController};
 
 use App\Http\Controllers\{
     HomeController,
-    AuthController
+    AuthController,
+    OrderViewController
 };
 
 /*
@@ -27,6 +28,13 @@ Route::get('/sanpham/detail/{id}', [HomeController:: class, 'detail'])->name('de
 Route::get('/congiong', [HomeController:: class, 'congiong']);
 Route::get('/search', [HomeController:: class, 'search'])->name('search');
 Route::get('/viewAll', [HomeController:: class, 'viewAll'])->name('viewAll');
+
+//order
+Route::get('/donhang', [OrderViewController:: class, 'donhang']);
+
+Route::prefix('/')->middleware('orderview')->group(function(){
+    Route::get('/donhang/edit/{id}', [OrderViewController::class, 'edit'])->name('donhang.edit');
+});
 
 Route::get('/login', [AuthController:: class, 'index']);
 Route::post('/login', [AuthController:: class, 'loginPost'])->name('login');
@@ -63,6 +71,10 @@ Route::prefix('/')->middleware('admin.login')->group(function(){
     Route::get('/admin/danhmuc/edit/{danhmuc}', [DanhmucController::class, 'edit'])->name('danhmuc.edit');
     Route::put('/admin/danhmuc/update/{danhmuc}', [DanhmucController::class, 'update'])->name('danhmuc.update');
     Route::delete('/admin/danhmuc/{danhmuc}/destroy', [DanhmucController::class, 'destroy'])->name('danhmuc.destroy');
+
+    Route::get('/admin/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/admin/orders/edit/{orders}', [OrderController::class, 'edit'])->name('orders.edit');
+    Route::put('/admin/orders/update/{orders}', [OrderController::class, 'update'])->name('orders.update');
 });
 
 

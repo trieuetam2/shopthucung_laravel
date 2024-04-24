@@ -33,12 +33,12 @@
 
         <div class="mb-3">
             <label for="mota" class="form-label">Mô tả:</label>
-            <textarea class="form-control" id="mota" name="mota" rows="3" required></textarea>
+            <textarea class="form-control" id="mota" name="mota" rows="3"></textarea>
         </div>
 
         <div class="mb-3">
             <label for="giamgia" class="form-label">Giảm giá</label>
-            <input type="number" class="form-control" id="giamgia" name="giamgia" max="100">
+            <input type="number" class="form-control" id="giamgia" name="giamgia" min="0" max="100">
         </div>
 
         <div class="mb-3">
@@ -58,6 +58,7 @@
         
     
         <button type="submit" class="btn btn-primary">Gửi</button>
+        &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/product')}}">Hủy</a>
     </form>
     
     <script>

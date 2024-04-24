@@ -37,12 +37,12 @@
 
         <div class="mb-3">
             <label for="mota" class="form-label">Mô tả:</label>
-            <textarea class="form-control" id="mota" name="mota" rows="3" required>{{$product->mota}}</textarea>
+            <textarea class="form-control" id="mota" name="mota" rows="3">{{$product->mota}}</textarea>
         </div>
 
         <div class="mb-3">
             <label for="giamgia" class="form-label">Giảm giá</label>
-            <input type="number" class="form-control" id="giamgia" name="giamgia" max="100" value="{{$product->giamgia}}">
+            <input type="number" class="form-control" id="giamgia" name="giamgia" min="0" max="100" value="{{$product->giamgia}}">
         </div>
 
         <div class="mb-3">
@@ -65,6 +65,7 @@
 
         <div>
             <input type="submit" class="btn btn-primary" value="Update">
+            &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/product')}}">Hủy</a>
         </div>
     </form>
 

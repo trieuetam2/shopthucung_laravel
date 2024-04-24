@@ -19,6 +19,7 @@ return new class extends Migration
             $table->tinyInteger('soluong')->nullable();
             $table->integer('giamgia')->nullable();
             $table->integer('giatien')->nullable();
+            $table->integer('giakhuyenmai')->nullable();
             $table->integer('tongtien')->nullable();
             $table->integer('id_sanpham');
             $table->integer('id_dathang')->unsigned(); // Unsigned to match the data type of id_dathang in dathang table

@@ -19,12 +19,15 @@ class AdminController extends Controller
         return view('admin_login');
     }
     public function dashboard(){
+        $getOrderView = $this->AdminRepository->getOrderView();
         $totalsCustomer = $this->AdminRepository->totalsCustomer();
         $totalsOrders = $this->AdminRepository->totalsOrders();
         $totalsMoney = $this->AdminRepository->totalsMoney();
         $totalsSaleProducts = $this->AdminRepository->totalsSaleProducts();
         return view('admin.dashboard', 
-        ['totalsCustomer' => $totalsCustomer,
+        [
+         'getOrderView' => $getOrderView,
+         'totalsCustomer' => $totalsCustomer,
          'totalsOrders' =>  $totalsOrders, 
          'totalsMoney' => $totalsMoney, 
          'totalsSaleProducts' => $totalsSaleProducts

@@ -40,7 +40,12 @@
                                 <img src="{{$sanpham->anhsp}}" alt="">
                             </div>
                             <div class="product__sale">
-                                <div>Mới</div>
+                                <div>
+                                    @if($sanpham->giamgia)
+                                        -{{$sanpham->giamgia}}%
+                                    @else Mới
+                                    @endif
+                                </div>
                             </div>
 
                             <div class="product__content">
@@ -51,7 +56,7 @@
                                 <div class="product__pride-oldPride">
                                     <span class="Price">
                                         <bdi>
-                                            300000
+                                            {{ number_format($sanpham->giasp, 0, ',', '.') }}
                                             <span class="currencySymbol">₫</span>
                                         </bdi>
                                     </span>
@@ -60,16 +65,13 @@
                                 <div class="product__pride-newPride">
                                     <span class="Price">
                                         <bdi>
-                                            {{$sanpham->giasp}}
+                                            {{ number_format($sanpham->giakhuyenmai, 0, ',', '.') }}
                                             <span class="currencySymbol">₫</span>
                                         </bdi>
                                     </span>
                                 </div>
-
                             </div>
-    
                         </div>
- 
                     </a>
                 </div>
                 @endforeach
@@ -131,13 +133,18 @@
         <div class="row">
             @foreach($dogproducts as $dogproduct)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $dogproduct->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$dogproduct->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($dogproduct->giamgia)
+                                    -{{$dogproduct->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -148,7 +155,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($dogproduct->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -157,16 +164,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$dogproduct->giasp}}
+                                        {{ number_format($dogproduct->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach
@@ -288,13 +292,18 @@
         <div class="row">
             @foreach($catproducts as $catproduct)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $catproduct->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$catproduct->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($catproduct->giamgia)
+                                    -{{$catproduct->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -305,7 +314,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($catproduct->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -314,16 +323,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$catproduct->giasp}}
+                                        {{ number_format($catproduct->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach
@@ -447,13 +453,18 @@
         <div class="row">
             @foreach($choGiongs as $choGiong)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $choGiong->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$choGiong->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($choGiong->giamgia)
+                                    -{{$choGiong->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -464,7 +475,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($choGiong->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -473,16 +484,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$choGiong->giasp}}
+                                        {{ number_format($choGiong->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach
@@ -493,13 +501,18 @@
         <div class="row">
             @foreach($meoGiongs as $meoGiong)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $meoGiong->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$meoGiong->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($meoGiong->giamgia)
+                                    -{{$meoGiong->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -510,7 +523,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($meoGiong->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -519,16 +532,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$meoGiong->giasp}}
+                                        {{ number_format($meoGiong->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach
@@ -548,13 +558,18 @@
         <div class="row">
             @foreach($alls as $all)
             <div class="col-lg-2_5 col-md-4 col-6 post2">
-                <a href="#">
+                <a href="{{ route('detail', ['id' => $all->id_sanpham]) }}">
                     <div class="product">
                         <div class="product__img">
                             <img src="{{$all->anhsp}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($all->giamgia)
+                                    -{{$all->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -565,7 +580,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($all->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -574,16 +589,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$all->giasp}}
+                                        {{ number_format($all->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach

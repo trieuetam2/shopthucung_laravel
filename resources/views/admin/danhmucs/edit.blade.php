@@ -24,6 +24,7 @@
 
         <div>
             <input type="submit" class="btn btn-primary" value="Update">
+            &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Hủy</a>
         </div>
     </form>
 

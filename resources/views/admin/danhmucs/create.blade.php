@@ -20,6 +20,7 @@
         </div>
     
         <button type="submit" class="btn btn-primary">Gửi</button>
+        &nbsp;<a class="btn btn-secondary" href="{{URL::to('/admin/danhmuc')}}">Hủy</a>
     </form>
     
 @endsection

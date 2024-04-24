@@ -8,12 +8,12 @@
                     <div class="big-img">
                         <img src="{{ asset($sanpham->anhsp) }}" alt="" id="zoom" style="visibility: visible;">
                     </div>
-                    <div class="small-img d-flex mt-2">
+                    {{-- <div class="small-img d-flex mt-2">
                             <img src="./img/dohop.jpg" onerror="this.onerror=null; this.src='https://i.pinimg.com/originals/ae/4c/9e/ae4c9ea2edf887f6ad1e4e63cfae05b0.jpg'" class="small-imgg" alt="">
                             <img src="./img/dohop.jpg" onerror="this.onerror=null; this.src='https://i.pinimg.com/originals/ae/4c/9e/ae4c9ea2edf887f6ad1e4e63cfae05b0.jpg'" class="small-imgg" alt="">
                             <img src="./img/dohop.jpg" onerror="this.onerror=null; this.src='https://i.pinimg.com/originals/ae/4c/9e/ae4c9ea2edf887f6ad1e4e63cfae05b0.jpg'" class="small-imgg" alt="">
                             <img src="./img/dohop.jpg" onerror="this.onerror=null; this.src='https://i.pinimg.com/originals/ae/4c/9e/ae4c9ea2edf887f6ad1e4e63cfae05b0.jpg'" class="small-imgg" alt="">
-                    </div>
+                    </div> --}}
                 </div>
     
                 <div class="product__details-info">
@@ -27,14 +27,14 @@
                         <div class="product__pride-oldPride" style="font-size: 20px; text-align: start;">
                             <span class="Price">
                                 <bdi>
-                                    {{$sanpham->giasp}}    
+                                    {{ number_format($sanpham->giasp, 0, ',', '.') }}  
                                     <span class="currencySymbol">₫</span>
                                 </bdi>
                             </span>
                         </div>
                         <div class="product__pride-newPride" style="font-size: 40px; text-align: start;">
                             <span class="Price">
-                                <bdi> {{$sanpham->giasp}}    
+                                <bdi>{{ number_format($sanpham->giakhuyenmai, 0, ',', '.') }}  
                                     <span class="currencySymbol">₫</span>
                                 </bdi>
                             </span>
@@ -135,7 +135,12 @@
                             <img src="{{ asset($random->anhsp)}}" alt="">
                         </div>
                         <div class="product__sale">
-                            <div>Mới</div>
+                            <div>
+                                @if($random->giamgia)
+                                    -{{$random->giamgia}}%
+                                @else Mới
+                                @endif
+                            </div>
                         </div>
 
                         <div class="product__content">
@@ -146,7 +151,7 @@
                             <div class="product__pride-oldPride">
                                 <span class="Price">
                                     <bdi>
-                                        300000
+                                        {{ number_format($random->giasp, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
@@ -155,16 +160,13 @@
                             <div class="product__pride-newPride">
                                 <span class="Price">
                                     <bdi>
-                                        {{$random->giasp}}
+                                        {{ number_format($random->giakhuyenmai, 0, ',', '.') }}
                                         <span class="currencySymbol">₫</span>
                                     </bdi>
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </a>
             </div>
             @endforeach

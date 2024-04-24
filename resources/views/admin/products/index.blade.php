@@ -29,7 +29,9 @@
     <th>Tên sp</th>
     <th>Hình</th>
     <th>Số lượng</th>
-    <th>giá</th>
+    <th>giá gốc</th>
+    <th>giảm giá</th>
+    <th>giá khuyến mại</th>
     <th colspan="2">Actions</th>
   </tr>
 </thead>
@@ -40,6 +42,12 @@
     <td><img src="{{ asset($product->anhsp)}}" width="120" height="120" alt=""></td>
     <td>{{$product->soluong}}</td>
     <td>{{$product->giasp}}</td>
+    <td>
+      @if ($product->giamgia)
+        {{$product->giamgia}}%
+      @endif
+    </td>
+    <td>{{$product->giakhuyenmai}}</td>
     <td colspan="2">
         <a href="{{ route('product.edit', ['product' => $product]) }}" class="btn btn-warning mb-2">Edit</a>
         <form method="post" action="{{route('product.destroy', ['product' => $product])}}">

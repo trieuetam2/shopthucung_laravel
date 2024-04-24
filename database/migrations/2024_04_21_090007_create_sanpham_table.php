@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('giasp')->nullable();
             $table->text('mota')->nullable();
             $table->integer('giamgia')->nullable();
+            $table->integer('giakhuyenmai')->nullable();
             $table->integer('soluong')->nullable();
             $table->integer('id_danhmuc')->index('fk_customer');
         });

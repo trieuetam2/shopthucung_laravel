@@ -37,6 +37,7 @@ class ProductController extends Controller
             'giasp' => 'required|decimal:0,2',
             'mota' => 'nullable',
             'giamgia' => 'nullable',
+            'giakhuyenmai' => 'nullable|decimal:0,2',
             'soluong' => 'required|numeric',
             'id_danhmuc' => 'required'
         ]);
@@ -56,6 +57,13 @@ class ProductController extends Controller
         // Thêm đường dẫn hình ảnh vào dữ liệu được xác nhận
         $validatedData['anhsp'] = $imageUrl;
 
+        //tinh giam gia
+        $giagoc = $validatedData['giasp'];
+        $giamgia = $validatedData['giamgia'];
+
+        $tinh = ($giagoc * $giamgia) / 100;
+        $validatedData['giakhuyenmai'] = $giagoc - $tinh;
+
         $this->productRepository->storeProduct($validatedData);
 
         return redirect()->route('product.index');
@@ -74,6 +82,7 @@ class ProductController extends Controller
             'giasp' => 'required|decimal:0,2',
             'mota' => 'nullable',
             'giamgia' => 'nullable',
+            'giakhuyenmai' => 'nullable|decimal:0,2',
             'soluong' => 'required|numeric',
             'id_danhmuc' => 'required'
         ]);
@@ -98,6 +107,13 @@ class ProductController extends Controller
         
         // Thêm đường dẫn hình ảnh vào dữ liệu được xác nhận
         $validatedData['anhsp'] = $imageUrl;
+
+        //tinh giam gia
+        $giagoc = $validatedData['giasp'];
+        $giamgia = $validatedData['giamgia'];
+
+        $tinh = ($giagoc * $giamgia) / 100;
+        $validatedData['giakhuyenmai'] = $giagoc - $tinh;
 
         $this->productRepository->updateProduct($validatedData, $id);
 
