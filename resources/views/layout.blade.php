@@ -69,10 +69,15 @@
                     </div>
                 @endif
             
-                <a href="index.html?page=cart" class="navbar__shoppingCart">
+                <a href="{{ route('cart') }}" class="navbar__shoppingCart">
                     <img src="{{ asset('frontend/img/shopping-cart.svg')}}" style="width: 24px;" alt="">
                     
-                    <span>0</span>
+                    @if (session('cart'))
+                        <span>{{ count((array) session('cart')) }}</span>
+                    @else
+                        <span>0</span>
+                    
+                    @endif
                 </a>
             </div>
         </div>

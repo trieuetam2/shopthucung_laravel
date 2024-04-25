@@ -3,6 +3,11 @@
     <!--Main-->
     <div class="body" style="padding-top: 50px;">
         <a class="buy_continute" href="{{URL::to('/')}}"><i class="fa fa-arrow-circle-left"></i> Trở lại mua hàng</a>
+        @if(session('success'))
+            <div class="alert alert-success mt-3">
+            {{ session('success') }}
+            </div> 
+        @endif
             <div class="product_card mt-3">
                 <div class="product__details-img mr-2">
                     <div class="big-img">
@@ -55,7 +60,7 @@
     
                         <div class="number">
                             <span>
-                                Số lượng tồn
+                                Số lượng
                                 <span class="number__count">
                                     {{$sanpham->soluong}}    
                                 </span>
@@ -64,10 +69,10 @@
                         </div>
     
                         <div class="product__cart">
-                            <a href="giohang.html" class="product__cart-add" name="add-to-cart">
+                            <a href="{{ route('add_to_cart', $sanpham->id_sanpham) }}" class="product__cart-add" name="add-to-cart">
                                 Thêm vào giỏ hàng
                             </a>
-                            <a href="giohang.html" class="product__cart-buy" name="buy-now">Mua ngay</a>
+                            <a href="{{ route('add_go_to_cart', $sanpham->id_sanpham) }}" class="product__cart-buy" name="buy-now">Mua ngay</a>
                         </div>
     
                     </form>

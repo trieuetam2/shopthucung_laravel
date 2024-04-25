@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="body">
-    <h1 class="h3 mb-3"><strong>Xem đơn hàng</strong></h1>
+    <h1 class="h3 mb-3 bg-light p-3"><strong>Đơn hàng đã đặt</strong></h1>
 
     <div class="err">
         @if($errors->any())
@@ -14,16 +14,23 @@
     </div>
 
     @foreach ($showusers as $showuser)
-        <div class="mb-3">
-        <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
-        <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
-        <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
-        <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+        <div class="mb-3 bg-light p-3 my-3">
+            <h4>Thông tin khách hàng</h4>
+            <div class="d-flex">
+                <div class="mr-4">
+                    <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
+                    <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
+                </div>
+                <div class="">
+                    <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
+                    <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+                </div>
+            </div>
         </div>
     @endforeach
 
     <div class="mb-3">
-        <table class="table">
+        <table class="table table-hover my-0">
             <tbody>
                 <tr>
                     <th>ID đơn hàng</th>
@@ -99,11 +106,11 @@
                         <td>{{$orderdetail->giatien}}</td>
                         <td>{{$orderdetail->giamgia}}%</td>
                         <td>{{$orderdetail->giakhuyenmai}}</td>
-                        <td>{{$orderdetail->tongtien}}</td>
+                        <td>{{$orderdetail->giakhuyenmai * $orderdetail->soluong}}</td>
                     </tr>
 
                     @php
-                        $totalPrice += $orderdetail->tongtien; // Cộng giá trị tổng tiền
+                        $totalPrice += $orderdetail->giakhuyenmai * $orderdetail->soluong; // Cộng giá trị tổng tiền
                     @endphp
 
                 @endforeach
@@ -112,10 +119,9 @@
         </table>
     </div>
 
-    <div class="mb-3">
-        <label for="tongiten" class="form-label">Tiền ước tính</label>
-        <input type="text" class="form-control" id="tongiten" name="tongiten" value="{{$totalPrice}}" disabled>
-    </div>
+    <h3 class="d-flex justify-content-end align-items-center">
+        Tổng thanh toán &nbsp;<div class="text-danger" style="font-size: 40px;">{{ number_format($totalPrice, 0, ',', '.') }}đ</div>
+    </h3>
 
     &nbsp;<a class="btn btn-secondary" href="{{URL::to('/donhang')}}">Quay lại</a>
 </div>

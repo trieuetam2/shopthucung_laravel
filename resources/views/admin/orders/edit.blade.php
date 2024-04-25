@@ -86,11 +86,11 @@
                             <td>{{$orderdetail->giatien}}</td>
                             <td>{{$orderdetail->giamgia}}%</td>
                             <td>{{$orderdetail->giakhuyenmai}}</td>
-                            <td>{{$orderdetail->tongtien}}</td>
+                            <td>{{$orderdetail->giakhuyenmai * $orderdetail->soluong}}</td>
                         </tr>
 
                         @php
-                            $totalPrice += $orderdetail->tongtien; // Cộng giá trị tổng tiền
+                            $totalPrice += $orderdetail->giakhuyenmai * $orderdetail->soluong; // Cộng giá trị tổng tiền
                         @endphp
 
                     @endforeach

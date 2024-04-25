@@ -53,10 +53,11 @@ class AdminRepository implements IAdminRepository{
     public function totalsMoney()
     {
         return DB::table('chitiet_donhang')
-        ->join('dathang', 'chitiet_donhang.id_dathang', '=', 'dathang.id_dathang')
-        ->where('dathang.trangthai', 'giao thành công')
-        ->sum('chitiet_donhang.tongtien');
+            ->join('dathang', 'chitiet_donhang.id_dathang', '=', 'dathang.id_dathang')
+            ->where('dathang.trangthai', 'giao thành công')
+            ->sum(DB::raw('chitiet_donhang.giakhuyenmai * chitiet_donhang.soluong'));
     }
+    
     public function totalsSaleProducts()
     {
         return DB::table('chitiet_donhang')
