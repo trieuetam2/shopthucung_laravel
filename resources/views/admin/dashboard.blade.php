@@ -144,9 +144,9 @@
                   <td>{{$order->id_dathang}}</td>
           
                   @if ($order->phuongthucthanhtoan == "COD")
+                    <td class="d-none d-xl-table-cell"><div class="badge bg-secondary">{{$order->phuongthucthanhtoan}}</div></td>
+                  @elseif ($order->phuongthucthanhtoan == "VNPAY")
                     <td class="d-none d-xl-table-cell"><div class="badge bg-primary">{{$order->phuongthucthanhtoan}}</div></td>
-                  @elseif ($order->phuongthucthanhtoan == "MOMO")
-                    <td class="d-none d-xl-table-cell"><div class="badge bg-danger">{{$order->phuongthucthanhtoan}}</div></td>
                   @else
                   <td class="d-none d-xl-table-cell">{{$order->phuongthucthanhtoan}}</td>
                   @endif

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<form class="body" action="{{route('dathang')}}" method="POST" enctype="multipart/form-data">
+<form class="body" action="{{route('dathang')}}" method="POST" id="checkout" enctype="multipart/form-data">
     @csrf
 
     @foreach ($showusers as $key => $showuser)
@@ -82,19 +82,21 @@
                         <h4 class="pttt">Phương thức thanh toán</h4>
                         <div>
                             <div class="d-flex align-items-center p-2">
-                                <input type="radio" id="op1" name="phuongthucthanhtoan" value="COD" checked>
-                                <label for="op1" style="margin-bottom: 1px; margin-left: 5px; font-size: 20px;" class="paymentContent font-weight-bold text-xl p">
+                                <input type="radio" id="cod" name="redirect" value="COD" checked>
+                                <label for="cod" style="margin-bottom: 1px; margin-left: 5px; font-size: 20px;" class="paymentContent font-weight-bold text-xl p">
                                     Trả tiền khi nhận hàng (COD)
                                 </label>
                             </div>
+
                             <div class="d-flex align-items-center p-2">
-                                <input type="radio" id="op2" name="phuongthucthanhtoan" value="MOMO">
-                                <label for="op2" style="margin-bottom: 1px; margin-left: 5px; font-size: 20px;" class="paymentContent font-weight-bold text-xl p">
-                                    Thanh toán online (MOMO)
+                                <input type="radio" id="vnpay" name="redirect" value="VNPAY">
+                                <label for="vnpay" style="margin-bottom: 1px; margin-left: 5px; font-size: 20px;" class="paymentContent font-weight-bold text-xl p">
+                                    Thanh toán online (VNPAY)
                                 </label>
                             </div>
                         </div>
                     </div>
+
                 </td>
             </tr>
 
@@ -117,6 +119,22 @@
         </tfoot>
         </table>
 </form>
+
+<script>
+    //cod
+    $('#cod').click(function () {
+        // $('#cod').attr('value', 'COD');
+        $('#checkout').attr('action', "{{route('dathang')}}");
+    });
+
+    //chuyen khoan vnpay
+    $('#vnpay').click(function () {
+        // $('#vnpay').attr('value', 'VNPAY');
+        $('#checkout').attr('action', "{{route('vnpay')}}");
+
+    });
+
+</script>
 
 @endsection
 

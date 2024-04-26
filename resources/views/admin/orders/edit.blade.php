@@ -47,7 +47,7 @@
 
         <div class="mb-3">
             <label for="phuongthucthanhtoan" class="form-label">Phương thức thanh toán</label>
-            <input type="text" class="form-control" id="phuongthucthanhtoan" name="phuongthucthanhtoan" value="{{$order->phuongthucthanhtoan}}" required>
+            <input type="text" class="form-control" id="phuongthucthanhtoan" name="phuongthucthanhtoan" value="{{$order->phuongthucthanhtoan}}" disabled>
         </div>
 
         <div class="mb-3">

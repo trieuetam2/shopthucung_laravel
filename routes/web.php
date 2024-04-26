@@ -39,6 +39,7 @@ Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remo
 
 Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::post('/dathang', [CartController:: class, 'dathang'])->name('dathang');
+Route::post('/vnpay', [CartController:: class, 'vnpay'])->name('vnpay');
 Route::get('/thongbaodathang', [CartController:: class, 'thongbaodathang'])->name('thongbaodathang');
 
 //order

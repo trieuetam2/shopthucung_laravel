@@ -31,7 +31,6 @@ class OrderController extends Controller
     public function update($id, Request $request){
         $validatedData = $request->validate([
             'ngaygiaohang' => 'required',
-            'phuongthucthanhtoan' => 'required',
             'trangthai' => 'required',
         ]);
         $this->OrderRepository->updateOrder($validatedData, $id);
