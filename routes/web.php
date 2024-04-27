@@ -29,7 +29,7 @@ Route::get('/sanpham/detail/{id}', [HomeController:: class, 'detail'])->name('de
 Route::get('/congiong', [HomeController:: class, 'congiong']);
 Route::get('/search', [HomeController:: class, 'search'])->name('search');
 Route::get('/viewAll', [HomeController:: class, 'viewAll'])->name('viewAll');
-
+Route::get('/services', [HomeController:: class, 'services'])->name('services');
 //cart
 Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
