@@ -34,6 +34,9 @@
                         <li><a href="{{ URL::to('/')}}">Trang chủ</a></li>
                         <li><a href="{{ URL::to('/congiong')}}">Con giống</a></li>
                         <li>
+                            <a href="{{ URL::to('/services')}}">Dịch vụ</a>
+                        </li>
+                        <li>
                             <a href="{{ URL::to('/donhang')}}">Đơn hàng</a>
                         </li>
                     </ul>
