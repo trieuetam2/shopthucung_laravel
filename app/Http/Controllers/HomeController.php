@@ -60,5 +60,8 @@ class HomeController extends Controller
         $viewAllPaginations = $this->sanphamRepository->viewAllWithPagi();
         return view('pages.viewall', ['sanphams' => $viewAllPaginations]);
     }
+    public function services(){
+        return view('pages.services');
+    }
     
 }
