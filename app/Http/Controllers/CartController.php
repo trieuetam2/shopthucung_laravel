@@ -119,7 +119,7 @@ class CartController extends Controller
         $validatedDataDatHang['phuongthucthanhtoan'] = $request->redirect;
         $validatedDataDatHang['diachigiaohang'] = $request->diachigiaohang;
         $validatedDataDatHang['trangthai'] = "đang xử lý";
-        $validatedDataDatHang['id_kh'] = $request->id_kh;
+        $validatedDataDatHang['id_kh'] = Auth::user()->id_kh;
 
         $dathangCre = Dathang::create($validatedDataDatHang);
 
@@ -136,7 +136,7 @@ class CartController extends Controller
             $validatedDataCTDatHang['id_sanpham'] = $item['id_sanpham'];   
             $validatedDataCTDatHang['id_dathang'] = $dathangCre->id_dathang;            
         
-            $validatedDataCTDatHang['id_kh'] = $request->id_kh;   
+            $validatedDataCTDatHang['id_kh'] = Auth::user()->id_kh; 
         
             ChitietDonhang::create($validatedDataCTDatHang);
         }
