@@ -70,7 +70,7 @@ import file <b>shopthucung_laravel/larave.sql</b> và bấm chạy
 <p>DB_CONNECTION=mysql  	//kiểu kết nối</p>
 <p>DB_HOST=127.0.0.1   	//host truy cập</p>
 <p>DB_PORT=3306    	//port mysql</p>
-<p>DB_DATABASE=<blarave</b> 	//tên database</p>
+<p>DB_DATABASE=<b>larave</b>//tên database</p>
 <p>DB_USERNAME=root  	//user</p>
 <p>DB_PASSWORD=         	//có pass thì nhập</p>
 
