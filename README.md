@@ -2,7 +2,7 @@
 
 ### Hình minh họa code
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-1.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-<h3><center>Hình 1</center></h3>
+<h3 align="center">Hình 1</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-2.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
 
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-3.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
