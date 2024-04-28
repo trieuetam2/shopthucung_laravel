@@ -4,27 +4,25 @@
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-1.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
 <h3 align="center">Hình 1</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-2.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 2</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-3.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 3</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-4.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 4</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-5.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 5</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-6.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 6</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-7.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 7</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-8.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 8</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-9.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 9</h3>
 <p align="center"><a href="#"><img src="https://github.com/trieuetam2/shopthucung_laravel/blob/main/public/frontend/upload/shop-thu-cung-laravel-hinh-10.PNG" width="100%" alt="shop-thu-cung-laravel-hinh-1.PNG"></a></p>
-
+<h3 align="center">Hình 10</h3>
 ## Thông tin project
 Source code website thương mại điện tử cửa hàng thú cưng Laravel 10 + MySQL
-* Sử dụng Laravel 10, thanh toán VNPAY
-
 
 ## *Chức năng
 
@@ -53,7 +51,7 @@ Source code website thương mại điện tử cửa hàng thú cưng Laravel 1
 
 ## Hướng dẫn cài đặt:
 
-Bước 1: Giải nén tập tin .zip vừa tải về.
+<b>Bước 1:</b> Giải nén tập tin .zip vừa tải về.
 
 Bước 2: Mở Xampp start Apache, MySQL
 
