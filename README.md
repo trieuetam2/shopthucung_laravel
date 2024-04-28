@@ -53,28 +53,28 @@ Source code website thương mại điện tử cửa hàng thú cưng Laravel 1
 
 <b>Bước 1:</b> Giải nén tập tin .zip vừa tải về.
 
-Bước 2: Mở Xampp start Apache, MySQL
+<b>Bước 2:</b> Mở Xampp start Apache, MySQL
 
-Bước 3: Truy cập localhost/phpmyadmin tạo mới tên Database là larave
-import file shopthucung_laravel/larave.sql và bấm chạy
+<b>Bước 3:</b> Truy cập localhost/phpmyadmin tạo mới tên Database là <b>larave</b>
+import file <b>shopthucung_laravel/larave.sql</b> và bấm chạy
 
-Bước 4: Mở thư mục shopthucung_laravel lên và chạy terminal gõ 2 lệnh sau:
+<b>Bước 4:</b> Mở thư mục shopthucung_laravel lên và chạy terminal gõ 2 lệnh sau:
 
-<p>composer install</p>
-<p>php artisan key:generate</p>
+<p><b>composer install</b></p>
+<p><b>php artisan key:generate</b></p>
 
-Bước 5: Chỉnh lại file .env
+<b>Bước 5:</b> Chỉnh lại file .env
 
  -- các thông số dưới sao cho phù hợp với máy --
 
 <p>DB_CONNECTION=mysql  	//kiểu kết nối</p>
 <p>DB_HOST=127.0.0.1   	//host truy cập</p>
 <p>DB_PORT=3306    	//port mysql</p>
-<p>DB_DATABASE=larave 	//tên database</p>
+<p>DB_DATABASE=larave</b> 	//tên database</p>
 <p>DB_USERNAME=root  	//user</p>
 <p>DB_PASSWORD=         	//có pass thì nhập</p>
 
-Bước 6: Cuối cùng chạy lệnh 
+<b>Bước 6:</b> Cuối cùng chạy lệnh 
 
-<p>php artisan serve</p>
+<p><b>php artisan serve</b></p>
 
