@@ -61,21 +61,21 @@ import file shopthucung_laravel/larave.sql và bấm chạy
 
 Bước 4: Mở thư mục shopthucung_laravel lên và chạy terminal gõ 2 lệnh sau:
 
-composer install
-php artisan key:generate
+<p>composer install</p>
+<p>php artisan key:generate</p>
 
 Bước 5: Chỉnh lại file .env
 
  -- các thông số dưới sao cho phù hợp với máy --
 
-DB_CONNECTION=mysql  	//kiểu kết nối
-DB_HOST=127.0.0.1   	//host truy cập
-DB_PORT=3306    	//port mysql
-DB_DATABASE=larave 	//tên database
-DB_USERNAME=root  	//user
-DB_PASSWORD=         	//có pass thì nhập
+<p>DB_CONNECTION=mysql  	//kiểu kết nối</p>
+<p>DB_HOST=127.0.0.1   	//host truy cập</p>
+<p>DB_PORT=3306    	//port mysql</p>
+<p>DB_DATABASE=larave 	//tên database</p>
+<p>DB_USERNAME=root  	//user</p>
+<p>DB_PASSWORD=         	//có pass thì nhập</p>
 
 Bước 6: Cuối cùng chạy lệnh 
 
-php artisan serve
+<p>php artisan serve</p>
 
