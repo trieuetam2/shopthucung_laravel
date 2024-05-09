@@ -6,7 +6,7 @@
 
 ### 1.User
 - **Trang người dùng.**
-- **Đăng ký tài khoản, đăng nhập người dùng**
+- **Đăng ký tài khoản, đăng nhập người dùng thư viện Auth**
 - **Tìm kiếm phân trang sản phẩm**
 - **Xem thêm sản phẩm**
 - **Chi tiết sản phẩm**
@@ -16,7 +16,7 @@
 - **Thanh toán COD, Thanh toán online VNPAY**
 
 ### 2. Admin
-- **Trang quản trị**
+- **Trang quản trị phân quyền**
 - **Đăng nhập admin**
 - **Tổng quan (Dashboard)**
 - **Quản lý đơn hàng**
