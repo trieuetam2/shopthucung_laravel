@@ -16,7 +16,7 @@
 - **Thanh toán COD, Thanh toán online VNPAY**
 
 ### 2. Admin
-- **Trang quản trị phân quyền**
+- **Trang quản trị phân quyền dùng middleware**
 - **Đăng nhập admin**
 - **Tổng quan (Dashboard)**
 - **Quản lý đơn hàng**
