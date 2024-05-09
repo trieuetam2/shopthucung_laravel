@@ -2,7 +2,7 @@
 
 ## *Thông tin project Source code website thương mại điện tử cửa hàng thú cưng Laravel 10 + MySQL
 
-## *Chức năng
+## *Các Chức năng
 
 ### 1.User
 - **Trang người dùng.**
