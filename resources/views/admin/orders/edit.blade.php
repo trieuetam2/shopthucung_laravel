@@ -12,12 +12,20 @@
         @endif
     </div>
 
+
     @foreach ($showusers as $showuser)
-        <div class="mb-3">
-        <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
-        <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
-        <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
-        <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+        <div class="mb-3 bg-light p-3 my-3">
+            <h4>Thông tin khách hàng</h4>
+            <div class="d-flex">
+                <div class="mr-4">
+                    <div style="font-size: 18px;"><strong>Khách hàng:</strong> {{$showuser->hoten}}</div>
+                    <div style="font-size: 18px;"><strong>Email:</strong> {{$showuser->email}}</div>
+                </div>
+                <div class="">
+                    <div style="font-size: 18px;"><strong>Số điện thoại:</strong> {{$showuser->sdt}}</div>
+                    <div style="font-size: 18px;"><strong>Địa chỉ:</strong> {{$showuser->diachi}}</div>
+                </div>
+            </div>
         </div>
     @endforeach
 
