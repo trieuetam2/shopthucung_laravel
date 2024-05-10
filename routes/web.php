@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\admin\{AdminController, ProductController,DanhmucController, OrderController};
+use App\Http\Controllers\admin\{AdminController, ProductController,DanhmucController, OrderController, UserController};
 
 use App\Http\Controllers\{
     HomeController,
@@ -86,6 +86,12 @@ Route::prefix('/')->middleware('admin.login')->group(function(){
     Route::get('/admin/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/admin/orders/edit/{orders}', [OrderController::class, 'edit'])->name('orders.edit');
     Route::put('/admin/orders/update/{orders}', [OrderController::class, 'update'])->name('orders.update');
+
+    Route::get('/admin/khachhang', [UserController::class, 'index'])->name('khachhang.index');
+    Route::get('/admin/khachhang/edit/{khachhang}', [UserController::class, 'edit'])->name('khachhang.edit');
+    Route::put('/admin/khachhang/update/{khachhang}', [UserController::class, 'update'])->name('khachhang.update');
+    Route::delete('/admin/khachhang/{khachhang}/destroy', [UserController::class, 'destroy'])->name('khachhang.destroy');
+
 });
 
 

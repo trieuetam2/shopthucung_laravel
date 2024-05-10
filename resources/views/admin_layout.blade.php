@@ -74,6 +74,13 @@
                 </a>
             </li>
         
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{URL::to('/admin/khachhang')}}">
+                    <i class="align-middle me-2" data-feather="package"></i>
+                    <span class="align-middle">Users</span>
+                </a>
+            </li>
+        
             <li class="sidebar-header">Tools & Components</li>
         
             <li class="sidebar-item">
