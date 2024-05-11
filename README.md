@@ -23,7 +23,7 @@
 - **Quản lý sản phẩm**
 - **Quản lý danh mục**
 - **Thêm sửa xóa sản phẩm, danh mục, CRUD, Search**
-- **User permission**
+- **Phân quyền người dùng**
 - **Thống kê doanh thu tổng quan**
 
 ## Hình minh họa code
