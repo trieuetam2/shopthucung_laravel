@@ -5,7 +5,7 @@
 ## *Các Chức năng
 
 ### 1.User
-- **Trang người dùng.**
+- **Trang người dùng**
 - **Đăng ký tài khoản, đăng nhập người dùng thư viện Auth**
 - **Tìm kiếm phân trang sản phẩm**
 - **Xem thêm sản phẩm**
